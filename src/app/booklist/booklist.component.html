@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <app-insert-book *ngIf="!submitted" (NewBook)="InsertBook($event)" ></app-insert-book>
+    <app-edit-book *ngIf="openUpdateForm" (bookSubmitted)="openUpdateForm =false" [OpenBookEdit] ="BookToUpdate" (EditedBook)="UpdateEditedBook($event)"></app-edit-book>
+  <button class="btn btn-outline-success btn-sm float-right add-new-book" (click)="addNewBookButton()">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    ADD NEW BOOK
+  </button>
+    <table class="table table-striped table-dark table-bordered">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Items</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let book of books; index as i">
+            <td class="bg-dark text-white" >{{ i }}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.category}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.stock}}</td>
+            <td><i class="fa fa-pencil-square-o edit" aria-hidden="true" (click)="OpenBookUpdate(book)"></i></td>
+            <td><i class="fa fa-trash-o delete" aria-hidden="true" (click)="deleteBook(book,i)"></i></td>
+          </tr>
+     
+        </tbody>
+      </table>
+
+
+</div>

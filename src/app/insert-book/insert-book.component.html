@@ -1,0 +1,38 @@
+
+  <h2>{{ title }}</h2>
+  <hr>
+
+<form #bookForm ="ngForm" (ngSubmit)="onSubmitAddBook(bookForm.value)">
+    <div class="row">
+  <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required ngModel>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" class="form-control" id="author" name="author" required ngModel>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" class="form-control" id="category" name="category" required ngModel>
+          </div>
+   </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price" required ngModel>
+      </div>
+      <div class="form-group">
+          <label for="stock" class="form">Items(available):</label>
+            <input type="number" class="form-control" name="stock" id="items" required ngModel>
+      </div>
+        <div class="form-group">
+          <label for="description" class="form-text-area">Description</label>
+            <textarea id="description" class="form-control" name="description" ngModel></textarea>
+        </div>
+
+  <button type="submit" class="btn btn-outline-info submit-btn" click>Submit</button>
+</div>
+</div>
+</form>

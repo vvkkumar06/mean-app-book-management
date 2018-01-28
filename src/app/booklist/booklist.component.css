@@ -1,0 +1,13 @@
+i.edit, i.delete{
+    cursor:pointer;
+}
+i.edit{
+    color:green;
+}
+i.delete{
+    color:red;
+}
+button.add-new-book{
+    margin-bottom:5px;
+    cursor: pointer;
+}
